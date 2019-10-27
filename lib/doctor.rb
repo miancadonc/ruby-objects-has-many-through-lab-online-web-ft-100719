@@ -19,4 +19,8 @@ class Doctor
     Patient.all.select{|patient| patient.doctor}
   end
   
+  def self.all
+    @@all
+  end
+  
 end
