@@ -1,0 +1,22 @@
+class Doctor
+  attr_accessor :name
+  @@all = []
+  
+  def initialize(name)
+    @name = name
+    @@all << self
+  end
+  
+  def appointments
+    Appointment.all.select{|appointment| appointment.doctor}
+  end
+  
+  def new_appointment(name, date)
+    Appointment.new()
+  end
+  
+  def patients
+    Patient.all.select{|patient| patient.doctor}
+  end
+  
+end
